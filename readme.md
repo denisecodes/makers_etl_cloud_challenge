@@ -21,10 +21,7 @@ I was tasked with find the most visited URL per country per day during a week of
 
 ## 🚀 Tech Stack 
 
- <img src="https://img.shields.io/badge/Amazon_AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white">
- <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54"> 
- <img src="https://img.shields.io/badge/Made%20with-Jupyter-orange?style=for-the-badge&logo=Jupyter">
- <img src="https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white">
+ <img src="https://img.shields.io/badge/Amazon_AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white"><img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54"> <img src="https://img.shields.io/badge/Made%20with-Jupyter-orange?style=for-the-badge&logo=Jupyter"><img src="https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white">
 
  ## 👷‍♀️ Infrastructure
 
@@ -53,9 +50,9 @@ While attempting to complete this challenge, I made a plan on how to use Athena 
 1. Understand the data using Athena i.e. what the column names mean, what kind of values and data types.
 2. Choose which columns would be useful - i.e. `country_code`, `url_visited`, `date`.
 3. Test queries out step by step with the following to try out:
-    * COUNT(date) to count how many url per country per day.
-    * Filter the dates: BETWEEN 2018-04-01 AND 2018-04-08.
-    * Use GROUP by on country_code, date.
+    * `COUNT(date)` to count how many url per country per day.
+    * Filter the dates: `BETWEEN 2018-04-01 AND 2018-04-08`.
+    * Use `GROUP BY on country_code, date`.
     * Do some research to find out how we could get the url that is most visited on the url column.
 4. Repeat testing until the query performs as expected and gives the output I am looking for.
 
