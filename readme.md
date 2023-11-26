@@ -47,7 +47,7 @@ You can find the code and full ETL process in my [Jupyter Notebook](./etl_cloud_
 
 ### 1. Understand the Data 📖 
 While attempting to complete this challenge, I made a plan on how to use Athena to understand the data before doing extraction, transformation, loading (ETL). You can find my plan in the following:
-1. **Decipher the data in Athena** i.e. what the column names mean, what kind of values and data types.
+1. **Decipher the data** i.e. what the column names mean, what kind of values and data types.
 2. **Choose which columns would be useful** - i.e. `country_code`, `url_visited`, `date`.
 3. **Test queries out step by step** with the following to try out:
     * `COUNT(date)` to count how many url per country per day.
