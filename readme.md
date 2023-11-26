@@ -45,7 +45,7 @@ I was tasked with find the most visited URL per country per day during a week of
 
 You can find the code and full ETL process in my [Jupyter Notebook](./etl_cloud_db_challenge.ipynb).
 
-### 1. Understand the Data 
+### 1. Understand the Data 📖 
 While attempting to complete this challenge, I made a plan on how to use Athena to understand the data before doing extraction, transformation, loading (ETL). You can find my plan in the following:
 1. **Decipher the data in Athena** i.e. what the column names mean, what kind of values and data types.
 2. **Choose which columns would be useful** - i.e. `country_code`, `url_visited`, `date`.
@@ -56,9 +56,9 @@ While attempting to complete this challenge, I made a plan on how to use Athena 
     * Do some research to find out how we could get the url that is most visited on the url column.
 4. **Repeat testing until the query performs as expected**, giving the output I am looking for.
 
-This plan significantly helped me in thoroughly testing, refining, and optimizing the SQL query to be used for extracting the Netflix data in the Jupyer notebook. In the notebook, you can find my step by step process to modifying the SQL query and examining the results obtained from Athena.
+> This plan significantly helped me in thoroughly testing, refining, and optimizing the SQL query to be used for extracting the Netflix data in the Jupyer notebook. In the notebook, you can find my step by step process to modifying the SQL query and examining the results obtained from Athena.
 
-### 2. Extract the Data
+### 2. Extract the Data 🛠️
 
 Once I have identified the necessary SQL query for data extraction, the following was my step by step approach to extract the data:
 
@@ -75,13 +75,13 @@ Once I have identified the necessary SQL query for data extraction, the followin
 6. **Store Query Results**
     * Store the results of the SQL query into a variable `results`, to be used for data transformation and loading.
 
-Through using AWS SDK to connect and interact with the database in cloud, it allowed me to easily initiate and execute queries and store results without going to the console. 
+> Through using AWS SDK to connect and interact with the database in cloud, it allowed me to easily initiate and execute queries and store results without going to the console. 
 
-Also, it's reassuring to know that AWS ensures secure access to the database by requiring the correct credentials. This helps to protect the database from unauthorized access through the implementation of Identity Access Management, in case malicious actors attempt to perform harmful actions i.e. modifying or deleting data from the database.
+> Also, it's reassuring to know that AWS ensures secure access to the database by requiring the correct credentials. This helps to protect the database from unauthorized access through the implementation of Identity Access Management, in case malicious actors attempt to perform harmful actions i.e. modifying or deleting data from the database.
 
-### 3. Transform and Load the Data
+### 3. Transform and Load the Data 💫
 
-After the data has been extracted successfully and saved, I did the following to transform and load the Data:
+After the data has been extracted successfully and saved, I did the following to transform and load the data:
 
 1. **Establish a Table to Store the Data**
     * Create a table in my local PostgreSQL database to store the data before transforming and loading the data.
@@ -89,9 +89,9 @@ After the data has been extracted successfully and saved, I did the following to
 2. **Ensure Data Integrity**
     * Iterate through each row of the extracted data to ensure none of the columns contained empty values before inserting the data into the PostgreSQL table.
 
-By ensuring that each row has values before loading it into my local PostgreSQL table, I eliminate unnecessary data. This helps optimize storage and reduces the time required for the transformation and loading process.
+> By ensuring that each row has values before loading it into my local PostgreSQL table, I eliminate unnecessary data. This helps optimize storage and reduces the time required for the transformation and loading process.
 
-### 4. Confirm Data has Loaded 
+### 4. Confirm Data has Loaded ✅
 
 1. **Establish connection with PostgreSQL database**
 * Use the sql magic in Jupyer Notebook to verify successful data loading into the table.
@@ -101,5 +101,3 @@ By ensuring that each row has values before loading it into my local PostgreSQL 
 *  -->
 
 <!-- ## 💻 Running the notebook -->
-
-
