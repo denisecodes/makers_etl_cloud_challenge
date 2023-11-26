@@ -1,5 +1,5 @@
 <h1 align="center">
-    ETL process for Netflix 🎬
+    ETL process for Netflix Data 🎬
 </h1>
 
 <p align="center">
@@ -45,36 +45,56 @@ I was tasked with find the most visited URL per country per day during a week of
 
 You can find the code and full ETL process in my [Jupyter Notebook](./etl_cloud_db_challenge.ipynb).
 
-### Understand the Data
+### 1. Understand the Data 
 While attempting to complete this challenge, I made a plan on how to use Athena to understand the data before doing extraction, transformation, loading (ETL). You can find my plan in the following:
-1. Understand the data using Athena i.e. what the column names mean, what kind of values and data types.
-2. Choose which columns would be useful - i.e. `country_code`, `url_visited`, `date`.
-3. Test queries out step by step with the following to try out:
+1. **Decipher the data in Athena** i.e. what the column names mean, what kind of values and data types.
+2. **Choose which columns would be useful** - i.e. `country_code`, `url_visited`, `date`.
+3. **Test queries out step by step** with the following to try out:
     * `COUNT(date)` to count how many url per country per day.
     * Filter the dates: `BETWEEN 2018-04-01 AND 2018-04-08`.
     * Use `GROUP BY on country_code, date`.
     * Do some research to find out how we could get the url that is most visited on the url column.
-4. Repeat testing until the query performs as expected and gives the output I am looking for.
+4. **Repeat testing until the query performs as expected**, giving the output I am looking for.
 
-This plan really helped me to test, refine and optimise the SQL query to be used for extraction and in the Jupyer notebook. In the notebook, you can find my step by step process to changing the SQL query and the outputs returned from Athena. 
+This plan significantly helped me in thoroughly testing, refining, and optimizing the SQL query to be used for extracting the Netflix data in the Jupyer notebook. In the notebook, you can find my step by step process to modifying the SQL query and examining the results obtained from Athena.
 
-### Extract the data
+### 2. Extract the Data
 
-Once I have found the SQL query I needed to extract the data, I created a variable called `sql_query` to stored the query to be used for extraction. Then, I set up AWS SDK in my Jupyter Notebook using Python and Boto3 library,
+Once I have identified the necessary SQL query for data extraction, the following was my step by step approach to extract the data:
 
-I created an Athena Client using Boto3 in order to interact with the Database and the S3 bucket folder to store the query results. To validate that I have access to the database and S3 bucket, I used my AWS credentials to validate my identity. 
+1. **Set Up SQL Query**
+    * Create a variable `sql_query` to store the SQL query to extract the Netflix data.
+2. **Configure AWS SDK**
+    * Set up AWS SDK in my Jupyter Notebook using Python and the Boto3 library.
+3. **Configure AWS Credentials**
+    * Use my AWS credentials to validate that I can access the database and S3 bucket.
+4. **Create Athena Client**
+    * Use Boto3 to create an Athena Client, enabling interaction with the Database and S3 bucket folder.
+5. **Execute the SQL Query**
+    * Initiate the SQL query through the Athena Client.
+6. **Store Query Results**
+    * Store the results of the SQL query into a variable `results`, to be used for data transformation and loading.
 
-After the Athena Client was set up, I initiated the SQL query and stored the results to be used for transforming and loading the data.
+Through using AWS SDK to connect and interact with the database in cloud, it allowed me to easily initiate and execute queries and store results without going to the console. 
 
-### Transform and Load the Data
+Also, it's reassuring to know that AWS ensures secure access to the database by requiring the correct credentials. This helps to protect the database from unauthorized access through the implementation of Identity Access Management, in case malicious actors attempt to perform harmful actions i.e. modifying or deleting data from the database.
 
-Before transforming and loading the data, I created a table in my local PostgreSQL database to store the data. 
+### 3. Transform and Load the Data
 
-Then I went through each row of the extracted data and ensured none of the columns contained empty values before inserting it into the table I created. 
+After the data has been extracted successfully and saved, I did the following to transform and load the Data:
 
-### Check the data has been loaded
+1. **Establish a Table to Store the Data**
+    * Create a table in my local PostgreSQL database to store the data before transforming and loading the data.
 
-Lastly, I used the sql magic to check that the data has been loaded to my table successfully.
+2. **Ensure Data Integrity**
+    * Iterate through each row of the extracted data to ensure none of the columns contained empty values before inserting the data into the PostgreSQL table.
+
+By ensuring that each row has values before loading it into my local PostgreSQL table, I eliminate unnecessary data. This helps optimize storage and reduces the time required for the transformation and loading process.
+
+### 4. Confirm Data has Loaded 
+
+1. **Establish connection with PostgreSQL database**
+* Use the sql magic in Jupyer Notebook to verify successful data loading into the table.
 
 
 <!-- ## ✅ Benefits of ETL
