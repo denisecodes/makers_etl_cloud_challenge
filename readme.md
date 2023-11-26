@@ -94,7 +94,7 @@ After the data has been extracted successfully and saved, I did the following to
 ### 4. Confirm Data has Loaded ✅
 
 1. **Establish connection with PostgreSQL database**
-* Use the sql magic in Jupyer Notebook to verify successful data loading into the table.
+    * Use the sql magic in Jupyer Notebook to verify successful data loading into the table.
 
 
 <!-- ## ✅ Benefits of ETL
