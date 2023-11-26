@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-This project aims to use the Extract, Transform, Load (ETL) process with Netflix data hosted on AWS in the Cloud. It was completed as part of the Makers Academy Bootcamp during Week 4 of the Data Engineering stream. The goal is to make the data more accessible and useful, ready to be used by a wider audience, both technical and non-technical.
+This project uses the Extract, Transform, Load (ETL) process with Netflix data hosted on AWS in the Cloud. Through the ETL process, the goal is to make the data more accessible and useful, ready to be used by a wider audience, both technical and non-technical. It was completed as part of the Makers Academy Bootcamp during Week 4 of the Data Engineering stream. 
 </p>
 
 ## 🏡 The scenario
