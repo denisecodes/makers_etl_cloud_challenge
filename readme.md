@@ -32,7 +32,7 @@ I was tasked with find the most visited URL per country per day during a week of
  * A crawler via AWS Glue to set up the table, linked to the S3 bucket containing the Netflix dataset.
 
 ### Local Machine 💻
-* A Jupyter Notebook using AWS SDK to connect to the database in the Cloud using valid AWS credentials,
+* A Jupyter Notebook using AWS SDK to connect to the database in the Cloud using valid AWS credentials.
 * A local PostgreSQL database with a table ready to load the data.
 
  ## 🖼️ Diagram
